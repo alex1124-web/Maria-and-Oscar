@@ -2040,6 +2040,66 @@ ul, ol {
   }
 
   .gallery__stats {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ---- Mobile-specific performance & layout fixes ---- */
+@media (max-width: 768px) {
+  /* Disable 3D scroll card on mobile — too heavy & clips layout */
+  .scroll-perspective {
+    perspective: none;
+  }
+  .scroll-card {
+    transform: none !important;
+    box-shadow: var(--shadow-xl);
+  }
+
+  /* Ensure all tap targets are at least 44px */
+  .btn, .header__cta, .hero__card-btn,
+  .service-card__link, .footer__social-link {
+    min-height: 44px;
+    touch-action: manipulation;
+  }
+
+  /* Hero card — full width, centred, no overflow */
+  .hero__card {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  /* Hero trust bar — wrap cleanly */
+  .hero__trust {
+    justify-content: center;
+  }
+  .hero__trust-item {
+    flex: 0 0 auto;
+  }
+
+  /* Social proof — 2-column grid on small screens */
+  .social-proof__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+    justify-items: center;
+  }
+  .social-proof__divider {
+    display: none;
+  }
+
+  /* Testimonials — cap height so it doesn't feel endless */
+  .testimonials-columns {
+    max-height: 520px;
+  }
+
+  /* Footer brand description — shorter on mobile */
+  .footer__brand-desc {
+    font-size: 0.9rem;
+  }
+
+  /* Prevent horizontal scroll from any overflow */
+  body, .hero, section {
+    overflow-x: hidden;
   }
 }

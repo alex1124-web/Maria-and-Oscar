@@ -89,6 +89,7 @@ function initMobileMenu() {
    3D Container Scroll Animation (gallery showcase)
    ========================================== */
 function initContainerScroll() {
+  if (window.innerWidth <= 768) return;
   const section = document.getElementById('gallery');
   const card = document.getElementById('gallery-scroll-card');
   if (!section || !card) return;

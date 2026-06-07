@@ -13,10 +13,20 @@
   <meta property="og:description" content="Expert residential and commercial roofing. Licensed, insured, and trusted by 500+ homeowners.">
   <meta property="og:type" content="website">
 
+  <!-- Mobile / PWA -->
+  <meta name="theme-color" content="#0d1b2a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
   <!-- Fonts -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
+
+  <!-- Preload hero image -->
+  <link rel="preload" as="image" href="images/hero.png" imagesrcset="images/hero-mobile.png 480w, images/hero.png 1400w" imagesizes="100vw">
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css">
@@ -68,7 +78,13 @@
        ============================================ -->
   <section class="hero" id="hero">
     <div class="hero__bg">
-      <img src="images/hero.png" alt="Beautiful luxury home with professionally installed roof" class="hero__bg-image" fetchpriority="high">
+      <img src="images/hero.png"
+           srcset="images/hero-mobile.png 480w, images/hero.png 1400w"
+           sizes="100vw"
+           alt="Beautiful luxury home with professionally installed roof"
+           class="hero__bg-image"
+           fetchpriority="high"
+           decoding="sync">
       <div class="hero__bg-overlay"></div>
       <div class="hero__bg-lines"></div>
     </div>
@@ -316,7 +332,12 @@
   <section class="why-us" id="why-us">
     <div class="container why-us__inner">
       <div class="why-us__image-wrap reveal-left">
-        <img src="images/detail.png" alt="Expert craftsman installing premium roofing shingles with precision" class="why-us__image" loading="lazy">
+        <img src="images/detail.png"
+             srcset="images/detail-mobile.png 480w, images/detail.png 900w"
+             sizes="(max-width: 768px) 100vw, 45vw"
+             alt="Expert craftsman installing premium roofing shingles with precision"
+             class="why-us__image"
+             loading="lazy" decoding="async">
         <div class="why-us__image-badge">
           <div class="why-us__image-badge-number" aria-label="15 plus years of experience"><span class="counter" data-target="15">0</span>+</div>
           <div class="why-us__image-badge-text">Years Experience</div>
@@ -387,13 +408,23 @@
       <div class="scroll-perspective">
       <div class="gallery__showcase scroll-card" id="gallery-scroll-card">
         <div class="gallery__image-wrap">
-          <img src="images/before-after.png" alt="Before and after comparison of a residential roof replacement showing dramatic transformation" class="gallery__image" loading="lazy">
+          <img src="images/before-after.png"
+               srcset="images/before-after-mobile.png 480w, images/before-after.png 900w"
+               sizes="(max-width: 768px) 100vw, 45vw"
+               alt="Before and after comparison of a residential roof replacement showing dramatic transformation"
+               class="gallery__image"
+               loading="lazy" decoding="async">
           <span class="gallery__image-label">Before & After</span>
         </div>
 
         <div>
           <div class="gallery__image-wrap">
-            <img src="images/work.png" alt="Professional roofing crew installing new shingles on a suburban home" class="gallery__image" loading="lazy">
+            <img src="images/work.png"
+                 srcset="images/work-mobile.png 480w, images/work.png 900w"
+                 sizes="(max-width: 768px) 100vw, 45vw"
+                 alt="Professional roofing crew installing new shingles on a suburban home"
+                 class="gallery__image"
+                 loading="lazy" decoding="async">
             <span class="gallery__image-label">In Progress</span>
           </div>
 
