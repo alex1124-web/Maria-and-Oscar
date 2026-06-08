@@ -2220,3 +2220,111 @@ ul, ol {
   /* Hide bar when mobile nav is open */
   .mobile-cta-bar.nav-open { display: none; }
 }
+
+/* ============================================
+   FAQ SECTION
+   ============================================ */
+.faq {
+  padding: var(--space-5xl) 0;
+  background: var(--color-offwhite);
+}
+
+.faq__header {
+  text-align: center;
+  margin-bottom: var(--space-4xl);
+}
+
+.faq__header .section-subtitle {
+  margin: 0 auto;
+}
+
+.faq__list {
+  max-width: 820px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.faq__item {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-gray-100);
+  overflow: hidden;
+  transition: box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.faq__item:hover,
+.faq__item.faq__item--open {
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-gold);
+}
+
+.faq__question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding: var(--space-xl) var(--space-2xl);
+  background: none;
+  border: none;
+  text-align: left;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  cursor: pointer;
+  transition: color var(--transition-fast);
+  line-height: 1.4;
+}
+
+.faq__question:hover {
+  color: var(--color-accent-dark);
+}
+
+.faq__icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  stroke: var(--color-accent);
+  transition: transform var(--transition-base);
+}
+
+.faq__item--open .faq__icon {
+  transform: rotate(180deg);
+}
+
+.faq__answer {
+  padding: 0 var(--space-2xl) var(--space-xl);
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  line-height: 1.75;
+  border-top: 1px solid var(--color-gray-100);
+}
+
+.faq__answer p {
+  margin-top: var(--space-md);
+}
+
+.faq__answer a {
+  color: var(--color-accent-dark);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.faq__answer a:hover {
+  color: var(--color-accent);
+}
+
+@media (max-width: 768px) {
+  .faq__question {
+    padding: var(--space-lg);
+    font-size: 0.95rem;
+  }
+
+  .faq__answer {
+    padding: 0 var(--space-lg) var(--space-lg);
+  }
+}
