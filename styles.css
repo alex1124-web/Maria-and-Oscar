@@ -1893,6 +1893,9 @@ ul, ol {
 /* ============================================
    RESPONSIVE DESIGN
    ============================================ */
+/* ============================================
+   RESPONSIVE — TABLET (≤1024px)
+   ============================================ */
 @media (max-width: 1024px) {
   .hero__content {
     grid-template-columns: 1fr;
@@ -1901,7 +1904,8 @@ ul, ol {
   }
 
   .hero__card {
-    max-width: 400px;
+    max-width: 480px;
+    margin: 0 auto;
   }
 
   .services__grid {
@@ -1922,20 +1926,29 @@ ul, ol {
   }
 }
 
+/* ============================================
+   RESPONSIVE — MOBILE (≤768px)
+   ============================================ */
 @media (max-width: 768px) {
   :root {
-    --header-height: 70px;
+    --header-height: 64px;
+    /* Tighten all section spacing on mobile */
+    --space-4xl: 3rem;
+    --space-5xl: 4rem;
   }
 
-  .header__nav {
-    display: none;
-  }
+  /* Prevent horizontal overflow everywhere */
+  html, body { overflow-x: hidden; }
+  section, footer { overflow-x: hidden; }
 
-  .header__menu-toggle {
-    display: flex;
-  }
+  /* Add bottom padding so sticky bar doesn't cover content */
+  body { padding-bottom: 72px; }
 
-  /* Mobile nav overlay */
+  /* ---- Header ---- */
+  .header__nav { display: none; }
+  .header__menu-toggle { display: flex; }
+  .header__cta { display: none; } /* hidden — sticky bar replaces it */
+
   .header__nav.active {
     display: flex;
     flex-direction: column;
@@ -1943,11 +1956,12 @@ ul, ol {
     inset: 0;
     background: rgba(13, 27, 42, 0.98);
     backdrop-filter: blur(20px);
-    padding: calc(var(--header-height) + var(--space-2xl)) var(--space-xl) var(--space-xl);
+    padding: calc(var(--header-height) + var(--space-2xl)) var(--space-xl) 100px;
     z-index: 1000;
-    gap: var(--space-xl);
     align-items: center;
     justify-content: center;
+    gap: var(--space-xl);
+    overflow-y: auto;
   }
 
   .header__nav.active .header__nav-list {
@@ -1956,150 +1970,241 @@ ul, ol {
     gap: var(--space-xl);
   }
 
-  .header__nav.active .header__nav-link {
-    font-size: 1.25rem;
+  .header__nav.active .header__nav-link { font-size: 1.3rem; }
+
+  /* Call button inside open mobile nav */
+  .header__nav.active .header__cta {
+    display: inline-flex;
+    margin-top: var(--space-lg);
+    font-size: 1rem;
+    padding: 0.9rem 2rem;
   }
 
+  /* ---- Hero ---- */
   .hero__content {
-    padding: calc(var(--header-height) + var(--space-2xl)) var(--space-lg) var(--space-3xl);
+    grid-template-columns: 1fr;
+    padding: calc(var(--header-height) + var(--space-xl)) var(--space-md) var(--space-3xl);
+    gap: var(--space-xl);
   }
+
+  .hero__badge { font-size: 0.7rem; padding: 0.4rem 0.9rem; }
 
   .hero__title {
-    font-size: clamp(2rem, 8vw, 3rem);
+    font-size: clamp(1.9rem, 7.5vw, 2.8rem);
+    margin-bottom: var(--space-md);
+  }
+
+  .hero__description {
+    font-size: 1rem;
+    margin-bottom: var(--space-xl);
+  }
+
+  /* Full-width CTA buttons on mobile */
+  .hero__actions {
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-xl);
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 1rem;
+    font-size: 1rem;
   }
 
   .hero__trust {
     flex-wrap: wrap;
-    gap: var(--space-lg);
+    justify-content: center;
+    gap: var(--space-md);
   }
 
-  .hero__scroll {
-    display: none;
-  }
+  .hero__trust-item { flex: 0 0 auto; }
+  .hero__scroll { display: none; }
 
-  .services__grid {
-    grid-template-columns: 1fr;
-  }
-
-  .why-us__features {
-    grid-template-columns: 1fr;
-  }
-
-  .gallery__showcase {
-    grid-template-columns: 1fr;
-  }
-
-  .gallery__image {
-    height: 300px;
-  }
-
-
-  .process__steps {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-2xl);
-  }
-
-  .process__steps::before {
-    display: none;
-  }
-
-  .cta__actions {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .social-proof__inner {
-    gap: var(--space-xl);
-  }
-
-  .social-proof__divider {
-    display: none;
-  }
-
-  .footer__inner {
-    grid-template-columns: 1fr;
-  }
-
-  .footer__bottom {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero__badge {
-    font-size: 0.7rem;
-  }
-
-  .hero__card {
-    padding: var(--space-lg);
-  }
-
-  .process__steps {
-    grid-template-columns: 1fr;
-  }
-
-  .gallery__stats {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-/* ---- Mobile-specific performance & layout fixes ---- */
-@media (max-width: 768px) {
-  /* Disable 3D scroll card on mobile — too heavy & clips layout */
-  .scroll-perspective {
-    perspective: none;
-  }
-  .scroll-card {
-    transform: none !important;
-    box-shadow: var(--shadow-xl);
-  }
-
-  /* Ensure all tap targets are at least 44px */
-  .btn, .header__cta, .hero__card-btn,
-  .service-card__link, .footer__social-link {
-    min-height: 44px;
-    touch-action: manipulation;
-  }
-
-  /* Hero card — full width, centred, no overflow */
+  /* Quote card — full width */
   .hero__card {
     width: 100%;
     max-width: 100%;
-    margin: 0 auto;
+    margin: 0;
+    padding: var(--space-xl);
   }
 
-  /* Hero trust bar — wrap cleanly */
-  .hero__trust {
-    justify-content: center;
-  }
-  .hero__trust-item {
-    flex: 0 0 auto;
+  /* ---- Social Proof Bar ---- */
+  .social-proof {
+    padding: var(--space-xl) 0;
   }
 
-  /* Social proof — 2-column grid on small screens */
   .social-proof__inner {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--space-lg);
     justify-items: center;
   }
-  .social-proof__divider {
-    display: none;
+
+  .social-proof__divider { display: none; }
+
+  /* ---- Services ---- */
+  .services__grid { grid-template-columns: 1fr; }
+
+  .service-card {
+    padding: var(--space-xl);
+    display: flex;
+    flex-direction: column;
   }
 
-  /* Testimonials — cap height so it doesn't feel endless */
+  .service-card__link {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    touch-action: manipulation;
+  }
+
+  /* ---- Why Us ---- */
+  .why-us__inner { grid-template-columns: 1fr; }
+
+  .why-us__image-wrap { order: -1; }
+
+  .why-us__image { height: 260px; border-radius: var(--radius-xl); }
+
+  .why-us__features { grid-template-columns: 1fr; gap: var(--space-lg); }
+
+  /* ---- Gallery ---- */
+  .scroll-perspective { perspective: none; }
+  .scroll-card { transform: none !important; box-shadow: none; border-radius: 0; }
+
+  .gallery__showcase { grid-template-columns: 1fr; gap: var(--space-xl); }
+  .gallery__image { height: 240px; }
+  .gallery__stats { grid-template-columns: 1fr 1fr; gap: var(--space-md); }
+
+  .gallery__stat { padding: var(--space-lg); }
+  .gallery__stat-number { font-size: 2rem; }
+
+  /* ---- Testimonials ---- */
   .testimonials-columns {
-    max-height: 520px;
+    grid-template-columns: 1fr !important;
+    max-height: 480px;
   }
 
-  /* Footer brand description — shorter on mobile */
-  .footer__brand-desc {
-    font-size: 0.9rem;
+  .testimonials-col--md,
+  .testimonials-col--lg { display: none; }
+
+  /* ---- Process ---- */
+  .process__steps {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
   }
 
-  /* Prevent horizontal scroll from any overflow */
-  body, .hero, section {
-    overflow-x: hidden;
+  .process__steps::before { display: none; }
+
+  .process-step { padding: var(--space-xl); }
+
+  /* ---- CTA ---- */
+  .cta__inner { padding: var(--space-3xl) var(--space-md); }
+
+  .cta__title { font-size: clamp(1.6rem, 6vw, 2.2rem); }
+
+  .cta__actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-sm);
   }
+
+  .cta__actions .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  /* ---- Footer ---- */
+  .footer__inner { grid-template-columns: 1fr; gap: var(--space-2xl); }
+  .footer__bottom { flex-direction: column; text-align: center; gap: var(--space-md); }
+  .footer__legal { justify-content: center; }
+  .footer__brand-desc { font-size: 0.9rem; }
+
+  /* ---- Global tap targets ---- */
+  .btn, .hero__card-btn, .footer__social-link {
+    min-height: 44px;
+    touch-action: manipulation;
+  }
+}
+
+/* ============================================
+   RESPONSIVE — SMALL PHONES (≤480px)
+   ============================================ */
+@media (max-width: 480px) {
+  :root { --header-height: 60px; }
+
+  .hero__title { font-size: clamp(1.75rem, 7vw, 2.2rem); }
+
+  .hero__card { padding: var(--space-lg); }
+
+  .hero__trust-number { font-size: 1.1rem; }
+
+  .gallery__stats { grid-template-columns: 1fr 1fr; }
+
+  .section-title { font-size: clamp(1.5rem, 6vw, 2rem); }
+
+  .process__steps { grid-template-columns: 1fr; }
+
+  .social-proof__inner { grid-template-columns: 1fr; }
+}
+
+/* ============================================
+   MOBILE STICKY CTA BAR
+   ============================================ */
+.mobile-cta-bar {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-cta-bar {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    height: 64px;
+    box-shadow: 0 -4px 24px rgba(0,0,0,0.18);
+  }
+
+  .mobile-cta-bar__call,
+  .mobile-cta-bar__quote {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 1rem;
+    touch-action: manipulation;
+    transition: filter var(--transition-fast);
+  }
+
+  .mobile-cta-bar__call {
+    background: var(--color-primary);
+    color: var(--color-white);
+    border-right: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .mobile-cta-bar__call:active { filter: brightness(1.2); }
+
+  .mobile-cta-bar__quote {
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
+    color: var(--color-primary);
+  }
+
+  .mobile-cta-bar__quote:active { filter: brightness(1.1); }
+
+  .mobile-cta-bar__call svg,
+  .mobile-cta-bar__quote svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  /* Hide bar when mobile nav is open */
+  .mobile-cta-bar.nav-open { display: none; }
 }

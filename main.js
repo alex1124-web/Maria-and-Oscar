@@ -67,20 +67,22 @@ function initHeaderScroll() {
 function initMobileMenu() {
   const toggle = document.getElementById('menu-toggle');
   const nav = document.getElementById('nav');
+  const stickyBar = document.getElementById('mobile-cta-bar');
   if (!toggle || !nav) return;
 
   toggle.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('active');
     toggle.classList.toggle('active');
-    nav.classList.toggle('active');
-    document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+    if (stickyBar) stickyBar.classList.toggle('nav-open', isOpen);
   });
 
-  // Close menu on link click
   nav.querySelectorAll('.header__nav-link').forEach(link => {
     link.addEventListener('click', () => {
       toggle.classList.remove('active');
       nav.classList.remove('active');
       document.body.style.overflow = '';
+      if (stickyBar) stickyBar.classList.remove('nav-open');
     });
   });
 }
