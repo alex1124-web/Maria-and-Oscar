@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Maria & Oscar Roofing LLC — Premium Roofing Services | Licensed & Insured</title>
-  <meta name="description" content="Maria & Oscar Roofing LLC provides expert residential and commercial roofing services. Licensed, insured, and trusted by 500+ homeowners. Get your free estimate today.">
-  <meta name="keywords" content="roofing, roof repair, roof replacement, licensed roofer, insured roofing contractor">
+  <title>Roofing Contractor Riverside CA | Maria & Oscar Roofing LLC | Licensed & Insured</title>
+  <meta name="description" content="Maria & Oscar Roofing LLC — Riverside CA's top-rated roofing contractor. 5.0★ on Google. Roof repair, replacement & installation. Family-owned, licensed & insured. Call (951) 701-9764 for a free estimate.">
+  <meta name="keywords" content="roofing contractor Riverside CA, roof repair Riverside, roof replacement Riverside California, licensed roofer 92503, roofing company near me, emergency roof repair Riverside">
   <meta name="robots" content="index, follow">
   <meta name="google-site-verification" content="GNiYOM2lp2woW7yAmEBsDlfZGYzzlsnwM2XHnLrbveE" />
 
@@ -42,11 +42,34 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
 
-  <!-- Preload hero image -->
-  <link rel="preload" as="image" href="images/hero.png" imagesrcset="images/hero-mobile.png 480w, images/hero.png 1400w" imagesizes="100vw">
+  <!-- Preload hero image (WebP for supported browsers) -->
+  <link rel="preload" as="image" href="images/hero.webp" imagesrcset="images/hero-mobile.webp 480w, images/hero.webp 1400w" imagesizes="100vw" type="image/webp">
 
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="styles.css">
+  <!-- Critical CSS inlined for instant first paint -->
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--color-primary:#0d1b2a;--color-accent:#c9a84c;--color-accent-dark:#a68a32;--color-white:#fff;--color-offwhite:#f8f7f4;--font-display:'Playfair Display',Georgia,serif;--font-body:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;--header-height:80px;--space-sm:0.5rem;--space-md:1rem;--space-lg:1.5rem;--space-xl:2rem;--radius-full:9999px;--transition-base:300ms cubic-bezier(0.4,0,0.2,1)}
+    html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+    body{font-family:var(--font-body);background:var(--color-offwhite);overflow-x:hidden;line-height:1.6}
+    img{max-width:100%;height:auto;display:block}
+    a{text-decoration:none;color:inherit}
+    button{font-family:var(--font-body);cursor:pointer;border:none;outline:none}
+    ul{list-style:none}
+    .header{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--header-height);display:flex;align-items:center}
+    .header--transparent{background:transparent}
+    .header__inner{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:1400px;margin:0 auto;padding:0 1.5rem}
+    .hero{position:relative;min-height:100vh;display:flex;align-items:center;background:var(--color-primary);overflow:hidden}
+    .hero__bg{position:absolute;inset:0;z-index:0}
+    .hero__bg-image{width:100%;height:100%;object-fit:cover;transform:scale(1.05)}
+    .hero__bg-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(13,27,42,.85) 0%,rgba(13,27,42,.65) 50%,rgba(13,27,42,.4) 100%)}
+    .hero__content{position:relative;z-index:1;width:100%;max-width:1200px;margin:0 auto;padding:calc(var(--header-height) + 3rem) 1.5rem 4rem;display:grid;grid-template-columns:1fr 420px;gap:3rem;align-items:center}
+    .hero__title{font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4.2rem);font-weight:700;color:var(--color-white);line-height:1.08}
+    .hero__title-accent{color:var(--color-accent)}
+    @media(max-width:768px){:root{--header-height:64px}.hero__content{grid-template-columns:1fr;padding:calc(var(--header-height) + 1.5rem) 1rem 3rem}.hero__title{font-size:clamp(1.9rem,7.5vw,2.8rem)}body{padding-bottom:72px}}
+  </style>
+  <!-- Full stylesheet loaded async (non-render-blocking) -->
+  <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="styles.css"></noscript>
 
   <!-- Favicon (inline SVG) -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23c9a84c'/%3E%3Cpath d='M16 6L4 18h4v8h16v-8h4L16 6z' fill='%230d1b2a'/%3E%3C/svg%3E">
@@ -95,14 +118,17 @@
        ============================================ -->
   <section class="hero" id="hero">
     <div class="hero__bg">
-      <img src="images/hero.png"
-           srcset="images/hero-mobile.png 480w, images/hero.png 1400w"
-           sizes="100vw"
-           alt="Beautiful luxury home with professionally installed roof"
-           class="hero__bg-image"
-           width="1024" height="1024"
-           fetchpriority="high"
-           decoding="sync">
+      <picture>
+        <source type="image/webp" srcset="images/hero-mobile.webp 480w, images/hero.webp 1400w" sizes="100vw">
+        <img src="images/hero.png"
+             srcset="images/hero-mobile.png 480w, images/hero.png 1400w"
+             sizes="100vw"
+             alt="Beautiful luxury home with professionally installed roof"
+             class="hero__bg-image"
+             width="1024" height="1024"
+             fetchpriority="high"
+             decoding="sync">
+      </picture>
       <div class="hero__bg-overlay"></div>
       <div class="hero__bg-lines"></div>
     </div>
@@ -350,13 +376,16 @@
   <section class="why-us" id="why-us">
     <div class="container why-us__inner">
       <div class="why-us__image-wrap reveal-left">
-        <img src="images/detail.png"
-             srcset="images/detail-mobile.png 480w, images/detail.png 900w"
-             sizes="(max-width: 768px) 100vw, 45vw"
-             alt="Expert craftsman installing premium roofing shingles with precision"
-             class="why-us__image"
-             width="1024" height="1024"
-             loading="lazy" decoding="async">
+        <picture>
+          <source type="image/webp" srcset="images/detail-mobile.webp 480w, images/detail.webp 900w" sizes="(max-width: 768px) 100vw, 45vw">
+          <img src="images/detail.png"
+               srcset="images/detail-mobile.png 480w, images/detail.png 900w"
+               sizes="(max-width: 768px) 100vw, 45vw"
+               alt="Expert craftsman installing premium roofing shingles with precision"
+               class="why-us__image"
+               width="1024" height="1024"
+               loading="lazy" decoding="async">
+        </picture>
         <div class="why-us__image-badge">
           <div class="why-us__image-badge-number" aria-label="15 plus years of experience"><span class="counter" data-target="15">0</span>+</div>
           <div class="why-us__image-badge-text">Years Experience</div>
@@ -427,25 +456,31 @@
       <div class="scroll-perspective">
       <div class="gallery__showcase scroll-card" id="gallery-scroll-card">
         <div class="gallery__image-wrap">
-          <img src="images/before-after.png"
-               srcset="images/before-after-mobile.png 480w, images/before-after.png 900w"
-               sizes="(max-width: 768px) 100vw, 45vw"
-               alt="Before and after comparison of a residential roof replacement showing dramatic transformation"
-               class="gallery__image"
-               width="1024" height="1024"
-               loading="lazy" decoding="async">
+          <picture>
+            <source type="image/webp" srcset="images/before-after-mobile.webp 480w, images/before-after.webp 900w" sizes="(max-width: 768px) 100vw, 45vw">
+            <img src="images/before-after.png"
+                 srcset="images/before-after-mobile.png 480w, images/before-after.png 900w"
+                 sizes="(max-width: 768px) 100vw, 45vw"
+                 alt="Before and after roof replacement showing dramatic transformation in Riverside CA"
+                 class="gallery__image"
+                 width="1024" height="1024"
+                 loading="lazy" decoding="async">
+          </picture>
           <span class="gallery__image-label">Before & After</span>
         </div>
 
         <div>
           <div class="gallery__image-wrap">
-            <img src="images/work.png"
-                 srcset="images/work-mobile.png 480w, images/work.png 900w"
-                 sizes="(max-width: 768px) 100vw, 45vw"
-                 alt="Professional roofing crew installing new shingles on a suburban home"
-                 class="gallery__image"
-                 width="1024" height="1024"
-                 loading="lazy" decoding="async">
+            <picture>
+              <source type="image/webp" srcset="images/work-mobile.webp 480w, images/work.webp 900w" sizes="(max-width: 768px) 100vw, 45vw">
+              <img src="images/work.png"
+                   srcset="images/work-mobile.png 480w, images/work.png 900w"
+                   sizes="(max-width: 768px) 100vw, 45vw"
+                   alt="Professional roofing crew installing new shingles on a Riverside CA home"
+                   class="gallery__image"
+                   width="1024" height="1024"
+                   loading="lazy" decoding="async">
+            </picture>
             <span class="gallery__image-label">In Progress</span>
           </div>
 
@@ -825,20 +860,22 @@
   <!-- ============================================
        JAVASCRIPT
        ============================================ -->
-  <script src="main.js"></script>
+  <script src="main.js" defer></script>
 
-  <!-- Schema.org — Local Business Structured Data -->
+  <!-- Schema.org — Local Business -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "RoofingContractor",
     "name": "Maria & Oscar Roofing LLC",
-    "description": "Expert residential and commercial roofing services. Licensed, insured, and trusted by 500+ homeowners. Specializing in roof installation, repair, replacement, inspection, gutters, and emergency service.",
+    "description": "Top-rated roofing contractor in Riverside, CA. Expert residential and commercial roofing — installation, repair, replacement, inspection, gutters, and 24/7 emergency service. Licensed, insured, family-owned.",
     "url": "https://mariaoscarroofing.com",
     "telephone": "(951) 701-9764",
     "email": "info@mariaoscarroofing.com",
     "priceRange": "$$",
-    "image": "https://mariaoscarroofing.com/images/hero.png",
+    "image": "https://mariaoscarroofing.com/images/hero.webp",
+    "logo": "https://mariaoscarroofing.com/images/hero.webp",
+    "foundingDate": "2009",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "9196 Trey Ave",
@@ -847,10 +884,18 @@
       "postalCode": "92503",
       "addressCountry": "US"
     },
-    "areaServed": {
-      "@type": "City",
-      "name": "Riverside, CA"
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 33.9100,
+      "longitude": -117.4210
     },
+    "areaServed": [
+      {"@type": "City", "name": "Riverside"},
+      {"@type": "City", "name": "Corona"},
+      {"@type": "City", "name": "Moreno Valley"},
+      {"@type": "City", "name": "Norco"},
+      {"@type": "City", "name": "Jurupa Valley"}
+    ],
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
@@ -866,18 +911,51 @@
       "bestRating": "5",
       "worstRating": "1"
     },
+    "sameAs": [
+      "https://www.instagram.com/mariaandoscarroofingllc/"
+    ],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "Roofing Services",
       "itemListElement": [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "New Roof Installation" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Roof Repair" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Roof Replacement" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Roof Inspection" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gutters & Drainage" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Emergency Roof Repair" } }
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"New Roof Installation","areaServed":"Riverside, CA"}},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Roof Repair","areaServed":"Riverside, CA"}},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Roof Replacement","areaServed":"Riverside, CA"}},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Roof Inspection","areaServed":"Riverside, CA"}},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Gutters & Drainage","areaServed":"Riverside, CA"}},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Emergency Roof Repair","areaServed":"Riverside, CA"}}
       ]
     }
+  }
+  </script>
+
+  <!-- Schema.org — FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How much does a roof replacement cost in Riverside, CA?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Roof replacement costs in Riverside, CA typically range from $5,000 to $15,000+ depending on the size, pitch, and materials chosen. Maria & Oscar Roofing offers free, no-obligation estimates — call (951) 701-9764."}
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer emergency roof repair in Riverside?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Yes. Maria & Oscar Roofing provides 24/7 emergency roof repair services in Riverside, CA and surrounding areas. Call (951) 701-9764 any time for immediate assistance."}
+      },
+      {
+        "@type": "Question",
+        "name": "Is Maria & Oscar Roofing licensed and insured?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Yes. Maria & Oscar Roofing LLC is fully licensed by the state of California and carries full liability and workers' compensation insurance for every job."}
+      },
+      {
+        "@type": "Question",
+        "name": "What areas do you serve near Riverside, CA?",
+        "acceptedAnswer": {"@type": "Answer", "text": "We serve Riverside and the surrounding Inland Empire communities including Corona, Moreno Valley, Norco, Jurupa Valley, and the greater Riverside County area."}
+      }
+    ]
   }
   </script>
 
