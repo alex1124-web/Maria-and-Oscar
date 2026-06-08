@@ -1906,6 +1906,18 @@ ul, ol {
   color: var(--color-accent);
 }
 
+.footer__map-row {
+  margin-bottom: var(--space-2xl);
+  padding-top: var(--space-2xl);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.footer__map-iframe {
+  border-radius: var(--radius-lg);
+  filter: brightness(0.82) saturate(0.75) contrast(1.05);
+  display: block;
+}
+
 /* ============================================
    COUNTERS ANIMATION
    ============================================ */
