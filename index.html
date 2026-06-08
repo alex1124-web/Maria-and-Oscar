@@ -9,10 +9,26 @@
   <meta name="robots" content="index, follow">
   <meta name="google-site-verification" content="GNiYOM2lp2woW7yAmEBsDlfZGYzzlsnwM2XHnLrbveE" />
 
+  <!-- Canonical -->
+  <link rel="canonical" href="https://mariaoscarroofing.com/">
+
   <!-- Open Graph -->
   <meta property="og:title" content="Maria & Oscar Roofing LLC — Premium Roofing Services">
   <meta property="og:description" content="Expert residential and commercial roofing. Licensed, insured, and trusted by 500+ homeowners.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mariaoscarroofing.com/">
+  <meta property="og:image" content="https://mariaoscarroofing.com/images/hero.png">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="1024">
+  <meta property="og:image:alt" content="Maria & Oscar Roofing LLC — Premium Roofing Services">
+  <meta property="og:site_name" content="Maria & Oscar Roofing LLC">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Maria & Oscar Roofing LLC — Premium Roofing Services">
+  <meta name="twitter:description" content="Expert residential and commercial roofing. Licensed, insured, and trusted by 500+ homeowners.">
+  <meta name="twitter:image" content="https://mariaoscarroofing.com/images/hero.png">
 
   <!-- Mobile / PWA -->
   <meta name="theme-color" content="#0d1b2a">
@@ -84,6 +100,7 @@
            sizes="100vw"
            alt="Beautiful luxury home with professionally installed roof"
            class="hero__bg-image"
+           width="1024" height="1024"
            fetchpriority="high"
            decoding="sync">
       <div class="hero__bg-overlay"></div>
@@ -338,6 +355,7 @@
              sizes="(max-width: 768px) 100vw, 45vw"
              alt="Expert craftsman installing premium roofing shingles with precision"
              class="why-us__image"
+             width="1024" height="1024"
              loading="lazy" decoding="async">
         <div class="why-us__image-badge">
           <div class="why-us__image-badge-number" aria-label="15 plus years of experience"><span class="counter" data-target="15">0</span>+</div>
@@ -414,6 +432,7 @@
                sizes="(max-width: 768px) 100vw, 45vw"
                alt="Before and after comparison of a residential roof replacement showing dramatic transformation"
                class="gallery__image"
+               width="1024" height="1024"
                loading="lazy" decoding="async">
           <span class="gallery__image-label">Before & After</span>
         </div>
@@ -425,6 +444,7 @@
                  sizes="(max-width: 768px) 100vw, 45vw"
                  alt="Professional roofing crew installing new shingles on a suburban home"
                  class="gallery__image"
+                 width="1024" height="1024"
                  loading="lazy" decoding="async">
             <span class="gallery__image-label">In Progress</span>
           </div>
@@ -780,7 +800,7 @@
       </div>
 
       <div class="footer__bottom">
-        <p class="footer__copyright">© 2024 Maria & Oscar Roofing LLC. All rights reserved.</p>
+        <p class="footer__copyright">© 2026 Maria & Oscar Roofing LLC. All rights reserved.</p>
         <div class="footer__legal">
           <a href="#">Privacy Policy</a>
           <a href="#">Terms of Service</a>
@@ -794,6 +814,52 @@
        JAVASCRIPT
        ============================================ -->
   <script src="main.js"></script>
+
+  <!-- Schema.org — Local Business Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RoofingContractor",
+    "name": "Maria & Oscar Roofing LLC",
+    "description": "Expert residential and commercial roofing services. Licensed, insured, and trusted by 500+ homeowners. Specializing in roof installation, repair, replacement, inspection, gutters, and emergency service.",
+    "url": "https://mariaoscarroofing.com",
+    "telephone": "(555) 123-4567",
+    "email": "info@mariaoscarroofing.com",
+    "priceRange": "$$",
+    "image": "https://mariaoscarroofing.com/images/hero.png",
+    "areaServed": {
+      "@type": "AdministrativeArea",
+      "name": "Greater Metro Area"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        "opens": "07:00",
+        "closes": "19:00"
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "11",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Roofing Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "New Roof Installation" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Roof Repair" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Roof Replacement" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Roof Inspection" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gutters & Drainage" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Emergency Roof Repair" } }
+      ]
+    }
+  }
+  </script>
 
 </body>
 </html>
