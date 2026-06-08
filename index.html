@@ -49,7 +49,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
 
   <!-- Preload hero image (WebP for supported browsers) -->
-  <link rel="preload" as="image" href="images/hero.webp" imagesrcset="images/hero-mobile.webp 480w, images/hero.webp 1400w" imagesizes="100vw" type="image/webp">
+  <link rel="preload" as="image" href="images/hero.webp" imagesrcset="images/hero-mobile.webp 480w, images/hero.webp 1400w" imagesizes="(max-width: 480px) 480px, 1400px" type="image/webp">
 
   <!-- Critical CSS inlined for instant first paint -->
   <style>
@@ -133,13 +133,14 @@
         <img src="images/hero.png"
              srcset="images/hero-mobile.png 480w, images/hero.png 1400w"
              sizes="100vw"
-             alt="Beautiful luxury home with professionally installed roof"
+             alt="Maria and Oscar Roofing LLC team installing premium shingles on a Riverside CA home — licensed roofing contractors"
              class="hero__bg-image"
-             width="1024" height="1024"
+             width="1400" height="1156"
              fetchpriority="high"
              decoding="sync">
       </picture>
       <div class="hero__bg-overlay"></div>
+      <div class="hero__bg-shimmer" aria-hidden="true"></div>
       <div class="hero__bg-lines"></div>
     </div>
 

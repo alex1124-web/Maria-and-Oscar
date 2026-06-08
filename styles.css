@@ -479,14 +479,46 @@ ul, ol {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(0.35) contrast(1.1);
-  transform: scale(1.05);
-  animation: heroZoom 20s ease-in-out infinite alternate;
+  object-position: center 30%;
+  filter: brightness(0.45) contrast(1.15) saturate(0.9);
+  transform-origin: center center;
+  animation: heroPan 28s ease-in-out infinite alternate;
+  will-change: transform;
 }
 
-@keyframes heroZoom {
-  0% { transform: scale(1.05); }
-  100% { transform: scale(1.12); }
+@keyframes heroPan {
+  0%   { transform: scale(1.05) translate(0%, 0%); }
+  25%  { transform: scale(1.09) translate(-1.5%, -1%); }
+  50%  { transform: scale(1.12) translate(1%, -2%); }
+  75%  { transform: scale(1.08) translate(-0.5%, -0.5%); }
+  100% { transform: scale(1.06) translate(1.5%, -1.5%); }
+}
+
+/* Gold shimmer light sweep across hero */
+.hero__bg-shimmer {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(
+    108deg,
+    transparent 0%,
+    transparent 38%,
+    rgba(201, 168, 76, 0.06) 48%,
+    rgba(201, 168, 76, 0.10) 50%,
+    rgba(201, 168, 76, 0.06) 52%,
+    transparent 62%,
+    transparent 100%
+  );
+  background-size: 250% 100%;
+  animation: shimmerSweep 9s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes shimmerSweep {
+  0%   { background-position: 220% center; opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { background-position: -20% center; opacity: 0; }
 }
 
 .hero__bg-overlay {
