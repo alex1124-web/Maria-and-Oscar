@@ -2426,3 +2426,16 @@ ul, ol {
 }
 .moc-send:hover { background: var(--color-accent); color: var(--color-primary); }
 .moc-send svg { width: 16px; height: 16px; }
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* FIX 10: Service area cities in footer — visible but subdued */
+.footer__service-area {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.45);
+  margin-top: 0.75rem;
+  line-height: 1.8;
+}

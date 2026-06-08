@@ -30,6 +30,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ---- Parallax on Hero ----
   initHeroParallax();
+
+  // ---- FAQ Accordion ----
+  initFAQAccordion();
+
+  // ---- Lazy Map ----
+  initLazyMap();
 });
 
 /* ==========================================
@@ -261,14 +267,6 @@ function initFormHandling() {
   const form = document.getElementById('hero-quote-form');
   if (!form) return;
 
-  // Add inline CSS for spin animation
-  if (!document.getElementById('spin-keyframes')) {
-    const style = document.createElement('style');
-    style.id = 'spin-keyframes';
-    style.textContent = `@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }`;
-    document.head.appendChild(style);
-  }
-
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
@@ -370,4 +368,62 @@ function initHeroParallax() {
       ticking = true;
     }
   }, { passive: true });
+}
+
+/* ==========================================
+   FAQ Accordion
+   ========================================== */
+function initFAQAccordion() {
+  const items = document.querySelectorAll('.faq__item');
+  if (!items.length) return;
+
+  items.forEach(item => {
+    const btn = item.querySelector('.faq__question');
+    const answer = item.querySelector('.faq__answer');
+    if (!btn || !answer) return;
+
+    btn.addEventListener('click', () => {
+      const isOpen = item.classList.contains('faq__item--open');
+      // Close all
+      items.forEach(i => {
+        i.classList.remove('faq__item--open');
+        i.querySelector('.faq__question').setAttribute('aria-expanded', 'false');
+        i.querySelector('.faq__answer').hidden = true;
+      });
+      // Toggle clicked
+      if (!isOpen) {
+        item.classList.add('faq__item--open');
+        btn.setAttribute('aria-expanded', 'true');
+        answer.hidden = false;
+      }
+    });
+  });
+}
+
+/* ==========================================
+   Lazy Map (Intersection Observer)
+   ========================================== */
+function initLazyMap() {
+  const placeholder = document.getElementById('map-placeholder');
+  if (!placeholder) return;
+  const src = placeholder.dataset.src;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const iframe = document.createElement('iframe');
+        iframe.src = src;
+        iframe.width = '100%';
+        iframe.height = '240';
+        iframe.style.border = '0';
+        iframe.className = 'footer__map-iframe';
+        iframe.setAttribute('allowfullscreen', '');
+        iframe.setAttribute('loading', 'lazy');
+        iframe.setAttribute('referrerpolicy', 'no-referrer-when-downgrade');
+        iframe.setAttribute('title', placeholder.dataset.title);
+        placeholder.replaceWith(iframe);
+        observer.disconnect();
+      }
+    });
+  }, { rootMargin: '200px' });
+  observer.observe(placeholder);
 }
