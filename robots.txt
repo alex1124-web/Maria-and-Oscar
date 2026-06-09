@@ -2,3 +2,19 @@ User-agent: *
 Allow: /
 
 Sitemap: https://mariaoscarroofing.com/sitemap.xml
+
+# AI crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+# LLMs context file
+LLMs: https://mariaoscarroofing.com/llms.txt
