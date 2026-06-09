@@ -1252,30 +1252,5 @@
   ]
   </script>
 
-  <!-- FAQ Accordion -->
-  <script>
-    (function() {
-      var items = document.querySelectorAll('.faq__item');
-      items.forEach(function(item) {
-        var btn = item.querySelector('.faq__question');
-        var answer = item.querySelector('.faq__answer');
-        btn.addEventListener('click', function() {
-          var isOpen = item.classList.contains('faq__item--open');
-          // Close all
-          items.forEach(function(i) {
-            i.classList.remove('faq__item--open');
-            i.querySelector('.faq__question').setAttribute('aria-expanded', 'false');
-            i.querySelector('.faq__answer').hidden = true;
-          });
-          // Toggle clicked
-          if (!isOpen) {
-            item.classList.add('faq__item--open');
-            btn.setAttribute('aria-expanded', 'true');
-            answer.hidden = false;
-          }
-        });
-      });
-    })();
-  </script>
 </body>
 </html>
