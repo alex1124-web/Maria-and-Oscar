@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- FIX 9: Keyword-rich title, brand first, trust signal, no phone number waste -->
-  <title>Maria &amp; Oscar Roofing LLC | Roofing Contractor Riverside CA | Licensed &amp; Insured</title>
+  <title>Roofing Contractor Riverside CA | Maria &amp; Oscar Roofing</title>
   <meta name="description" content="Local roofing contractor serving Riverside CA &amp; Inland Empire. Roof repair, replacement &amp; installation. Lic. #1089842. Free estimates. Call (951) 701-9764.">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Maria &amp; Oscar Roofing LLC">
@@ -13,16 +13,17 @@
   <!-- FIX 1: Geo meta tags for local SEO signal -->
   <meta name="geo.region" content="US-CA">
   <meta name="geo.placename" content="Riverside, California">
-  <meta name="geo.position" content="33.9100;-117.4210">
-  <meta name="ICBM" content="33.9100, -117.4210">
+  <meta name="geo.position" content="33.9283;-117.4569">
+  <meta name="ICBM" content="33.9283, -117.4569">
 
   <!-- Canonical -->
   <link rel="canonical" href="https://mariaoscarroofing.com/">
+  <link rel="llms" href="/llms.txt">
   <!-- FIX 12: hreflang for English -->
   <link rel="alternate" hreflang="en-us" href="https://mariaoscarroofing.com/">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Maria &amp; Oscar Roofing LLC — Premium Roofing Services">
+  <meta property="og:title" content="Roofing Contractor Riverside CA | Maria &amp; Oscar Roofing LLC">
   <meta property="og:description" content="Expert residential and commercial roofing. Licensed, insured, and trusted by 500+ homeowners.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://mariaoscarroofing.com/">
@@ -36,7 +37,7 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Maria &amp; Oscar Roofing LLC — Premium Roofing Services">
+  <meta name="twitter:title" content="Roofing Contractor Riverside CA | Maria &amp; Oscar Roofing LLC">
   <meta name="twitter:description" content="Expert residential and commercial roofing. Licensed, insured, and trusted by 500+ homeowners.">
   <meta name="twitter:image" content="https://mariaoscarroofing.com/images/hero-crew.png">
   <!-- FIX 8: Missing Twitter identity tags -->
@@ -82,6 +83,7 @@
     .hero__title{font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4.2rem);font-weight:700;color:var(--color-white);line-height:1.08}
     .hero__title-accent{color:var(--color-accent)}
     @media(max-width:768px){:root{--header-height:64px}.hero__content{grid-template-columns:1fr;padding:calc(var(--header-height) + 1.5rem) 1rem 3rem}.hero__title{font-size:clamp(1.9rem,7.5vw,2.8rem)}body{padding-bottom:72px}}
+    @keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
   </style>
   <!-- Full stylesheet loaded async (non-render-blocking) -->
   <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -99,7 +101,7 @@
        ============================================ -->
   <header class="header header--transparent" id="header">
     <div class="header__inner">
-      <a href="#" class="header__logo" aria-label="M &amp; O Roofing LLC — Roofing Contractor Riverside CA">
+      <a href="/" class="header__logo" aria-label="M &amp; O Roofing LLC — Roofing Contractor Riverside CA">
         <picture>
           <source srcset="images/logo.webp" type="image/webp">
           <img src="images/logo.png" alt="Maria and Oscar Roofing LLC — Riverside CA roofing contractor" class="header__logo-img" width="144" height="70" loading="eager">
@@ -166,7 +168,7 @@
         </p>
 
         <div class="hero__actions">
-          <a href="#hero" class="btn btn--primary" id="hero-cta-primary">
+          <a href="#hero-form" class="btn btn--primary" id="hero-cta-primary">
             <span>Get Free Estimate</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
@@ -207,7 +209,7 @@
       </div>
 
       <!-- Floating Quote Card -->
-      <div class="hero__card">
+      <div class="hero__card" id="hero-form">
         <!-- FIX 13: Demoted from h2 to h3 — subcomponent of hero, not a top-level section heading -->
         <h3 class="hero__card-title">Get Your Free Quote</h3>
         <form class="hero__card-form" id="hero-quote-form">
@@ -257,7 +259,7 @@
           </div>
           <h3 class="service-card__title">New Roof Installation</h3>
           <p class="service-card__desc">New roof installation in Riverside CA using premium asphalt shingles, concrete tile, and TPO flat roofing systems built to withstand decades of Inland Empire heat, wind, and rain. Maria &amp; Oscar Roofing guides you through every step — from selecting the right material for your home's architecture and budget, to pulling permits, removing the old roof, installing underlayment, and completing a thorough final walkthrough. We use manufacturer-approved installation methods so your warranty stays fully intact.</p>
-          <a href="#hero" class="service-card__link">
+          <a href="#hero-form" class="service-card__link">
             Get Started
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
@@ -270,7 +272,7 @@
           </div>
           <h3 class="service-card__title">Roof Repair</h3>
           <p class="service-card__desc">Expert roof repair in Riverside CA for leaks, storm damage, cracked tiles, missing shingles, damaged flashing, and deteriorated underlayment. Maria &amp; Oscar Roofing diagnoses the real root cause — not just the visible symptom — and fixes it with materials matched to your existing roof. We don't patch over problems; we solve them. Most repairs are completed same-day or next-day. For active leaks or storm damage, our emergency response team is available 24/7 across Riverside and the Inland Empire.</p>
-          <a href="#hero" class="service-card__link">
+          <a href="#hero-form" class="service-card__link">
             Get Started
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
@@ -283,7 +285,7 @@
           </div>
           <h3 class="service-card__title">Roof Replacement</h3>
           <p class="service-card__desc">Full roof replacement service for Riverside CA homeowners ready to upgrade from worn-out shingles, aging tile, or a failing flat roof. Maria &amp; Oscar Roofing handles complete tear-off of the old system, inspection and repair of the roof deck, installation of new underlayment, and a premium finish layer in the material of your choice. We work efficiently — most single-story residential replacements are completed in one to two days — with daily cleanup and full protection of your landscaping and property throughout the project.</p>
-          <a href="#hero" class="service-card__link">
+          <a href="#hero-form" class="service-card__link">
             Get Started
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
@@ -296,7 +298,7 @@
           </div>
           <h3 class="service-card__title">Roof Inspection</h3>
           <p class="service-card__desc">Professional roof inspection service in Riverside CA for homebuyers, sellers, and current homeowners who want to know exactly what condition their roof is in. Maria &amp; Oscar Roofing conducts a comprehensive visual and physical assessment covering shingle or tile condition, flashing integrity, ridge cap, gutters, fascia, soffit, and attic ventilation. You receive a written report with photos identifying any active issues, areas of concern, and estimated remaining lifespan — giving you the information you need before buying, selling, or planning your next roofing budget.</p>
-          <a href="#hero" class="service-card__link">
+          <a href="#hero-form" class="service-card__link">
             Get Started
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
@@ -309,7 +311,7 @@
           </div>
           <h3 class="service-card__title">Gutters &amp; Drainage</h3>
           <p class="service-card__desc">Seamless aluminum gutter installation, cleaning, and repair for Riverside CA homes and commercial properties. Properly functioning gutters are your roof system's first line of defense — they direct water away from your fascia, siding, foundation, and landscaping. Maria &amp; Oscar Roofing installs continuous seamless gutters custom-formed to your roofline, significantly reducing leak risk compared to sectional systems. We also offer downspout repositioning, gutter guard installation, and seasonal cleaning service to keep your drainage system performing year-round through Riverside's wet winters and windy springs.</p>
-          <a href="#hero" class="service-card__link">
+          <a href="#hero-form" class="service-card__link">
             Get Started
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
@@ -322,7 +324,7 @@
           </div>
           <h3 class="service-card__title">Emergency Service</h3>
           <p class="service-card__desc">24/7 emergency roof repair across Riverside CA and the entire Inland Empire. When a storm, fallen tree, or sudden leak puts your home at risk, every hour of delay means more water damage, mold risk, and repair cost. Maria &amp; Oscar Roofing's emergency response team deploys fast — we tarp and secure your roof, stop active water intrusion, and document damage for insurance claims on the same visit. We work with all major homeowners insurance carriers and can provide same-day written estimates for your adjuster.</p>
-          <a href="#hero" class="service-card__link">
+          <a href="#hero-form" class="service-card__link">
             Get Started
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
@@ -438,7 +440,7 @@
             </div>
           </div>
 
-          <a href="#hero" class="btn btn--primary about__cta">
+          <a href="#hero-form" class="btn btn--primary about__cta">
             <span>Get Your Free Estimate</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
@@ -501,7 +503,7 @@
                  width="900" height="675"
                  loading="lazy" decoding="async">
           </picture>
-          <span class="gallery__image-label">Roof Installation</span>
+          <span class="gallery__image-label">Asphalt Shingle Installation — Riverside, CA</span>
         </div>
 
         <div>
@@ -516,7 +518,7 @@
                    width="900" height="675"
                    loading="lazy" decoding="async">
             </picture>
-            <span class="gallery__image-label">Flat Roof Coating</span>
+            <span class="gallery__image-label">Elastomeric Flat Roof Coating — Inland Empire</span>
           </div>
 
         </div>
@@ -676,6 +678,16 @@
               <p class="testimonial-card__quote">Excellent job! Great price assessment and very reasonable pricing. The team was efficient, professional, and the final result exceeded our expectations. Would absolutely use them again.</p>
               <div class="testimonial-card__author"><div class="testimonial-card__avatar-initials testimonial-card__avatar-initials--gold">MZ</div><div><div class="testimonial-card__name">Miguel Zamora</div><div class="testimonial-card__location">Google Review · 2 weeks ago</div></div></div>
             </article>
+            <article class="testimonial-card">
+              <div class="testimonial-card__stars"><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div>
+              <p class="testimonial-card__quote">Called M&amp;O for an emergency leak in Corona and they came out the same day. Fast, honest, and did a great job sealing everything up. Won't use anyone else for roofing.</p>
+              <div class="testimonial-card__author"><div class="testimonial-card__avatar-initials testimonial-card__avatar-initials--navy">DR</div><div><div class="testimonial-card__name">Diana Reyes</div><div class="testimonial-card__location">Google Review · Corona, CA</div></div></div>
+            </article>
+            <article class="testimonial-card">
+              <div class="testimonial-card__stars"><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div>
+              <p class="testimonial-card__quote">Got three quotes and M&amp;O was the most transparent. No hidden fees, showed up on time, and the new roof looks great. Riverside neighbors already asking who did the work.</p>
+              <div class="testimonial-card__author"><div class="testimonial-card__avatar-initials testimonial-card__avatar-initials--gold">RC</div><div><div class="testimonial-card__name">Robert Castillo</div><div class="testimonial-card__location">Google Review · Riverside, CA</div></div></div>
+            </article>
             <!-- SET 2 (duplicate) -->
             <article class="testimonial-card" aria-hidden="true">
               <div class="testimonial-card__stars"><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div>
@@ -691,6 +703,16 @@
               <div class="testimonial-card__stars"><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div>
               <p class="testimonial-card__quote">Excellent job! Great price assessment and very reasonable pricing. The team was efficient, professional, and the final result exceeded our expectations. Would absolutely use them again.</p>
               <div class="testimonial-card__author"><div class="testimonial-card__avatar-initials testimonial-card__avatar-initials--gold">MZ</div><div><div class="testimonial-card__name">Miguel Zamora</div><div class="testimonial-card__location">Google Review · 2 weeks ago</div></div></div>
+            </article>
+            <article class="testimonial-card" aria-hidden="true">
+              <div class="testimonial-card__stars"><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div>
+              <p class="testimonial-card__quote">Called M&amp;O for an emergency leak in Corona and they came out the same day. Fast, honest, and did a great job sealing everything up. Won't use anyone else for roofing.</p>
+              <div class="testimonial-card__author"><div class="testimonial-card__avatar-initials testimonial-card__avatar-initials--navy">DR</div><div><div class="testimonial-card__name">Diana Reyes</div><div class="testimonial-card__location">Google Review · Corona, CA</div></div></div>
+            </article>
+            <article class="testimonial-card" aria-hidden="true">
+              <div class="testimonial-card__stars"><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div>
+              <p class="testimonial-card__quote">Got three quotes and M&amp;O was the most transparent. No hidden fees, showed up on time, and the new roof looks great. Riverside neighbors already asking who did the work.</p>
+              <div class="testimonial-card__author"><div class="testimonial-card__avatar-initials testimonial-card__avatar-initials--gold">RC</div><div><div class="testimonial-card__name">Robert Castillo</div><div class="testimonial-card__location">Google Review · Riverside, CA</div></div></div>
             </article>
           </div>
         </div>
@@ -728,7 +750,7 @@
             <svg class="faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
           </button>
           <div class="faq__answer" id="faq-1" hidden>
-            <p>Roof replacement costs in Riverside CA typically range from <strong>$6,000 to $18,000+</strong> depending on the home's square footage, roof pitch, material type (asphalt shingles, tile, TPO flat roof), and whether old material removal is needed. Most Riverside homeowners pay between $8,000–$12,000 for a standard single-story replacement. Maria &amp; Oscar Roofing provides free, itemized estimates with no obligation — call <a href="tel:+19517019764">(951) 701-9764</a> or <a href="#hero">request a quote online</a>.</p>
+            <p>Roof replacement costs in Riverside CA typically range from <strong>$6,000 to $18,000+</strong> depending on the home's square footage, roof pitch, material type (asphalt shingles, tile, TPO flat roof), and whether old material removal is needed. Most Riverside homeowners pay between $8,000–$12,000 for a standard single-story replacement. Maria &amp; Oscar Roofing provides free, itemized estimates with no obligation — call <a href="tel:+19517019764">(951) 701-9764</a> or <a href="#hero-form">request a quote online</a>.</p>
           </div>
         </div>
 
@@ -768,15 +790,43 @@
             <svg class="faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
           </button>
           <div class="faq__answer" id="faq-5" hidden>
-            <p>Absolutely. Every estimate from Maria &amp; Oscar Roofing is <strong>100% free and no-obligation</strong>. One of our Riverside CA roofing specialists will visit your property, inspect your roof, and provide a detailed written estimate covering materials, labor, and timeline — with no hidden fees. <a href="#hero">Request your free estimate online</a> or call <a href="tel:+19517019764">(951) 701-9764</a>. We typically respond within 24 hours.</p>
+            <p>Absolutely. Every estimate from Maria &amp; Oscar Roofing is <strong>100% free and no-obligation</strong>. One of our Riverside CA roofing specialists will visit your property, inspect your roof, and provide a detailed written estimate covering materials, labor, and timeline — with no hidden fees. <a href="#hero-form">Request your free estimate online</a> or call <a href="tel:+19517019764">(951) 701-9764</a>. We typically respond within 24 hours.</p>
+          </div>
+        </div>
+
+        <div class="faq__item reveal">
+          <button class="faq__question" aria-expanded="false" aria-controls="faq-6">
+            How long does roof replacement take in Riverside CA?
+            <svg class="faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="faq__answer" id="faq-6" hidden>
+            <p>Most standard single-story residential roof replacements in Riverside CA take <strong>one to two days</strong> from start to finish. A larger two-story home or complex roof with multiple valleys and penetrations may take two to three days. Maria &amp; Oscar Roofing provides a specific timeline in every written estimate so you know exactly what to expect. We work Monday through Saturday and complete daily cleanup so your property stays tidy throughout the project.</p>
+          </div>
+        </div>
+
+        <div class="faq__item reveal">
+          <button class="faq__question" aria-expanded="false" aria-controls="faq-7">
+            What roofing materials are best for the Inland Empire heat?
+            <svg class="faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="faq__answer" id="faq-7" hidden>
+            <p>For Riverside CA and the Inland Empire's hot summers and dry climate, the three best roofing materials are: <strong>concrete or clay tile</strong> (excellent heat resistance, 40–50 year lifespan, common in Southern California), <strong>Class 4 impact-resistant asphalt shingles</strong> (cost-effective, Energy Star rated options available, 25–30 year warranty), and <strong>cool roof coatings or TPO membranes</strong> for flat roofs (highly reflective, significantly reduces attic heat load). Maria &amp; Oscar Roofing will recommend the right material for your specific home, budget, and HOA requirements during your free estimate.</p>
+          </div>
+        </div>
+
+        <div class="faq__item reveal">
+          <button class="faq__question" aria-expanded="false" aria-controls="faq-8">
+            Can homeowners insurance cover roof replacement in California?
+            <svg class="faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="faq__answer" id="faq-8" hidden>
+            <p>Yes — if your roof was damaged by a covered peril such as wind, hail, fallen tree, or fire, your homeowners insurance policy may cover part or all of the replacement cost. California policies typically cover <strong>sudden and accidental damage</strong> but not gradual wear and tear. Maria &amp; Oscar Roofing works with all major insurance carriers and can provide a <strong>same-day written damage assessment</strong> that your adjuster can use to process your claim. Call <a href="tel:+19517019764">(951) 701-9764</a> for emergency response or to schedule an insurance inspection.</p>
           </div>
         </div>
 
       </div>
     </div>
   </section>
-
-  </main>
 
   <!-- ============================================
        BOTTOM CTA SECTION
@@ -814,7 +864,7 @@
           <div class="cta-section__divider">
             <span>or</span>
           </div>
-          <a href="#hero" class="btn btn--primary cta-section__btn">
+          <a href="#hero-form" class="btn btn--primary cta-section__btn">
             <span>Fill Out the Free Quote Form</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
@@ -823,6 +873,7 @@
       </div>
     </div>
   </section>
+  </main>
 
   <!-- ============================================
        FOOTER
@@ -832,7 +883,7 @@
       <div class="footer__inner">
         <!-- Brand -->
         <div class="footer__brand">
-          <a href="#" class="header__logo" aria-label="M &amp; O Roofing LLC — Roofing Contractor Riverside CA">
+          <a href="/" class="header__logo" aria-label="M &amp; O Roofing LLC — Roofing Contractor Riverside CA">
             <picture>
               <source srcset="images/logo.webp" type="image/webp">
               <img src="images/logo.png" alt="Maria and Oscar Roofing LLC — Riverside CA roofing contractor" class="header__logo-img" width="144" height="70" loading="lazy">
@@ -861,12 +912,12 @@
         <div>
           <h3 class="footer__heading">Services</h3>
           <ul class="footer__list">
-            <li><a href="#services">New Roof Installation</a></li>
-            <li><a href="#services">Roof Repair</a></li>
-            <li><a href="#services">Roof Replacement</a></li>
-            <li><a href="#services">Roof Inspection</a></li>
-            <li><a href="#services">Gutters &amp; Drainage</a></li>
-            <li><a href="#services">Emergency Service</a></li>
+            <li><a href="#service-new-roof">New Roof Installation</a></li>
+            <li><a href="#service-repair">Roof Repair</a></li>
+            <li><a href="#service-replacement">Roof Replacement</a></li>
+            <li><a href="#service-inspection">Roof Inspection</a></li>
+            <li><a href="#service-gutters">Gutters &amp; Drainage</a></li>
+            <li><a href="#service-emergency">Emergency Service</a></li>
           </ul>
         </div>
 
@@ -907,6 +958,9 @@
           style="width:100%;height:240px;background:#e8e6e1;border-radius:8px;"
           aria-label="Map loading..."
         ></div>
+        <noscript>
+          <iframe src="https://www.google.com/maps?q=Maria+%26+Oscar+Roofing+LLC,+9196+Trey+Ave,+Riverside,+CA+92503&t=m&z=15&output=embed&iwloc=near" width="100%" height="240" style="border:0;" class="footer__map-iframe" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Maria &amp; Oscar Roofing LLC location map"></iframe>
+        </noscript>
       </div>
 
       <div class="footer__bottom">
@@ -937,22 +991,13 @@
        ============================================ -->
   <script src="main.js" defer></script>
 
-  <!-- FIX 2: WebSite schema upgraded with SearchAction potentialAction -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Maria & Oscar Roofing LLC",
     "url": "https://mariaoscarroofing.com",
-    "description": "Licensed roofing contractor in Riverside CA — roof installation, repair, replacement, inspection, gutters, and 24/7 emergency service.",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": "https://mariaoscarroofing.com/?s={search_term_string}"
-      },
-      "query-input": "required name=search_term_string"
-    }
+    "description": "Licensed roofing contractor in Riverside CA — roof installation, repair, replacement, inspection, gutters, and 24/7 emergency service."
   }
   </script>
 
@@ -986,8 +1031,8 @@
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 33.9100,
-      "longitude": -117.4210
+      "latitude": 33.9283,
+      "longitude": -117.4569
     },
     "areaServed": [
       {"@type": "City", "name": "Riverside"},
@@ -1001,7 +1046,9 @@
       {"@type": "City", "name": "Fontana"},
       {"@type": "City", "name": "San Bernardino"},
       {"@type": "City", "name": "Redlands"},
-      {"@type": "City", "name": "Colton"}
+      {"@type": "City", "name": "Colton"},
+      {"@type": "City", "name": "Perris"},
+      {"@type": "AdministrativeArea", "name": "Inland Empire"}
     ],
     "openingHoursSpecification": [
       {
@@ -1041,7 +1088,7 @@
     },
     "serviceArea": {
       "@type": "GeoCircle",
-      "geoMidpoint": {"@type": "GeoCoordinates", "latitude": 33.9100, "longitude": -117.4210},
+      "geoMidpoint": {"@type": "GeoCoordinates", "latitude": 33.9283, "longitude": -117.4569},
       "geoRadius": "40000"
     },
     "hasOfferCatalog": {
@@ -1103,7 +1150,7 @@
         "@type": "Review",
         "author": {"@type": "Person", "name": "Javier Gonzalez"},
         "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
-        "reviewBody": "My preferred roofer for 4+ years on dozens of commercial and retail rooftops. Capable of handling the toughest jobs safely and efficiently. Always stand by their work."
+        "reviewBody": "My preferred roofer for 3+ years on dozens of commercial and retail rooftops. Capable of handling the toughest jobs safely and efficiently. Always stand by their work."
       },
       {
         "@type": "Review",
@@ -1178,78 +1225,92 @@
           "@type": "Answer",
           "text": "Yes. Every estimate from Maria & Oscar Roofing is 100% free and no-obligation. A Riverside CA roofing specialist will visit your property, inspect your roof, and provide a detailed written estimate covering materials, labor, and timeline with no hidden fees. Call (951) 701-9764 or request a quote online. We typically respond within 24 hours."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does roof replacement take in Riverside CA?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most single-story residential roof replacements in Riverside CA take one to two days. Larger or more complex roofs may take two to three days. Maria & Oscar Roofing provides a specific timeline in every written estimate. Call (951) 701-9764 for a free assessment."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What roofing materials are best for the Inland Empire heat?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For the Inland Empire's hot climate, the best options are concrete or clay tile (40-50 year lifespan), Class 4 impact-resistant asphalt shingles (Energy Star rated options, 25-30 year warranty), and cool roof TPO membranes for flat roofs. Maria & Oscar Roofing recommends the right material for your home, budget, and HOA requirements during your free estimate."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can homeowners insurance cover roof replacement in California?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. If your roof was damaged by wind, hail, fallen tree, or fire, your homeowners insurance may cover part or all of the replacement. California policies typically cover sudden and accidental damage. Maria & Oscar Roofing works with all major insurance carriers and provides same-day written damage assessments for insurance claims. Call (951) 701-9764 for emergency response or to schedule an insurance inspection."
+        }
       }
     ]
   }
   </script>
 
-  <!-- FIX 3: BreadcrumbList schema — added after FAQ schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://mariaoscarroofing.com/"
-      }
-    ]
-  }
-  </script>
+
 
   <!-- Schema.org — Founders -->
   <script type="application/ld+json">
-  [
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Maria",
-      "jobTitle": "Co-Founder & Operations Manager",
-      "worksFor": {
-        "@type": "RoofingContractor",
-        "name": "Maria & Oscar Roofing LLC",
-        "url": "https://mariaoscarroofing.com"
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "name": "Maria",
+        "givenName": "Maria",
+        "jobTitle": "Co-Founder & Operations Manager",
+        "worksFor": {
+          "@type": "RoofingContractor",
+          "name": "Maria & Oscar Roofing LLC",
+          "url": "https://mariaoscarroofing.com"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Riverside",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        },
+        "sameAs": [
+          "https://www.instagram.com/mariaandoscarroofingllc/",
+          "https://www.facebook.com/people/Maria-Oscar-Roofing/61575524637396/"
+        ]
       },
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Riverside",
-        "addressRegion": "CA",
-        "addressCountry": "US"
-      },
-      "sameAs": [
-        "https://www.instagram.com/mariaandoscarroofingllc/",
-        "https://www.facebook.com/people/Maria-Oscar-Roofing/61575524637396/"
-      ]
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Oscar",
-      "jobTitle": "Co-Founder & Lead Roofing Contractor",
-      "hasCredential": {
-        "@type": "EducationalOccupationalCredential",
-        "credentialCategory": "license",
-        "name": "California Contractor License #1089842",
-        "recognizedBy": {
-          "@type": "GovernmentOrganization",
-          "name": "California Contractors State License Board"
+      {
+        "@type": "Person",
+        "name": "Oscar",
+        "givenName": "Oscar",
+        "jobTitle": "Co-Founder & Lead Roofing Contractor",
+        "hasCredential": {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "license",
+          "name": "California Contractor License #1089842",
+          "recognizedBy": {
+            "@type": "GovernmentOrganization",
+            "name": "California Contractors State License Board",
+            "url": "https://www.cslb.ca.gov"
+          }
+        },
+        "worksFor": {
+          "@type": "RoofingContractor",
+          "name": "Maria & Oscar Roofing LLC",
+          "url": "https://mariaoscarroofing.com"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Riverside",
+          "addressRegion": "CA",
+          "addressCountry": "US"
         }
-      },
-      "worksFor": {
-        "@type": "RoofingContractor",
-        "name": "Maria & Oscar Roofing LLC",
-        "url": "https://mariaoscarroofing.com"
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Riverside",
-        "addressRegion": "CA",
-        "addressCountry": "US"
       }
-    }
-  ]
+    ]
+  }
   </script>
 
 </body>

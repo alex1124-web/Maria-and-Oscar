@@ -169,6 +169,11 @@ function initScrollReveal() {
   const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
   if (!reveals.length) return;
 
+  if (!('IntersectionObserver' in window)) {
+    reveals.forEach(el => el.classList.add('visible'));
+    return;
+  }
+
   const observerOptions = {
     root: null,
     rootMargin: '0px 0px -60px 0px',
@@ -193,6 +198,11 @@ function initScrollReveal() {
 function initCounterAnimations() {
   const counters = document.querySelectorAll('.counter');
   if (!counters.length) return;
+
+  if (!('IntersectionObserver' in window)) {
+    counters.forEach(el => animateCounter(el));
+    return;
+  }
 
   const observerOptions = {
     threshold: 0.5
@@ -258,8 +268,6 @@ function initSmoothScroll() {
 
 /* ==========================================
    Form Handling — Web3Forms
-   Get your free access key at https://web3forms.com
-  Enter arthegoat1134@gmail.com → click "Create Access Key" → check email → paste below
    ========================================== */
 const WEB3FORMS_KEY = 'aa619df6-05af-4aaf-8c3c-908c7588458d';
 
@@ -407,6 +415,22 @@ function initLazyMap() {
   const placeholder = document.getElementById('map-placeholder');
   if (!placeholder) return;
   const src = placeholder.dataset.src;
+
+  if (!('IntersectionObserver' in window)) {
+    const iframe = document.createElement('iframe');
+    iframe.src = src;
+    iframe.width = '100%';
+    iframe.height = '240';
+    iframe.style.border = '0';
+    iframe.className = 'footer__map-iframe';
+    iframe.setAttribute('allowfullscreen', '');
+    iframe.setAttribute('loading', 'lazy');
+    iframe.setAttribute('referrerpolicy', 'no-referrer-when-downgrade');
+    iframe.setAttribute('title', placeholder.dataset.title);
+    placeholder.replaceWith(iframe);
+    return;
+  }
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
